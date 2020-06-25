@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="login-row">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab class="mat-tab-login" label="INICIAR SESIÓN">
+       <div class="label-login">
+         <p class="login-camp">
+           <mat-form-field appearance="outline">
+             <mat-label>Email</mat-label>
+             <input matInput placeholder="pat@example.com" [formControl]="email" type="email" required>
+             <mat-icon matSuffix>email</mat-icon>
+             <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+           </mat-form-field>
+         </p>
+         <p class="login-camp">
+           <mat-form-field appearance="outline">
+             <mat-label>Password</mat-label>
+             <input matInput [type]="hide ? 'password' : 'text'">
+             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+             </button>
+           </mat-form-field>
+         </p>
+          <div class="button-row">
+          <button class="btn-login"  mat-raised-button color="primary">Iniciar sesión</button>
+          </div>
+          <div class="button-row-redes">
+            <button  mat-raised-button type="button" class="btn login-redes" >
+              <i class="fa fa-google" aria-hidden="true"></i>
+              Google
+            </button>
+            <button mat-raised-button type="button" class="btn login-redes facebook" >
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              Facebook
+            </button>
+          </div>
+       </div>
+      </mat-tab>
+      <mat-tab #cuenta label="CREAR CUENTA">
+        <div class="label-login">
+          <p class="login-camp">
+            <mat-form-field appearance="outline">
+              <mat-label>Nombres:</mat-label>
+              <input matInput placeholder="Nombres">
+             
+            </mat-form-field>
+          </p>
+          <p class="login-camp">
+            <mat-form-field appearance="outline">
+              <mat-label>Apellidos:</mat-label>
+              <input matInput placeholder="Apellidos">
+            </mat-form-field>
+          </p>
+          <p class="login-camp">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="name@example.com" [formControl]="emailregis" type="email" required>
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error *ngIf="email.invalid">{{getErrorMessagee()}}</mat-error>
+            </mat-form-field>
+          </p>
+          <p class="login-camp">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </p>
+          <p class="login-camp">
+            <mat-form-field class="final" appearance="outline">
+              <mat-label>DNI (opcional)</mat-label>
+              <input matInput placeholder="DNI">
+            </mat-form-field>
+          </p>
+           <div class="button-row">
+           <button class="btn-login"  mat-raised-button color="primary">Completar registro</button>
+           </div>
+           <div class="button-row-redes">
+            <button  mat-raised-button type="button" class="btn login-redes" >
+              <i class="fa fa-google" aria-hidden="true"></i>
+              Google
+            </button>
+            <button mat-raised-button type="button" class="btn login-redes facebook" >
+              <i class="fa fa-facebook-square"></i>
+              Facebook
+            </button>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

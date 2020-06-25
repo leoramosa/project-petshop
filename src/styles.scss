@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.container{
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 50px 20px;
+}
+
+@media (min-width:576px){
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .container{
+      max-width: 1140px;
+      padding: 16px;
+      padding-left: 16px;
+  }
+
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-form-field-wrapper {
+  padding-bottom: 15px;
+}
+
+.mat-tab-label {
+  width: 50%;
+}
+
+.mat-button-wrapper{
+  vertical-align: middle;
+}
+
+.mat-card-header div{
+  margin: 0px 0px;
+}
+
+.mat-expansion-panel-header{
+  height: 15px;
+}
+mat-expansion-panel-header{
+  height: 15px;
+}
+
+.mat-form-field{
+  width: 45%;
+  padding: 5px;
+}
+
+.blue-snackbar {
+  background: #53bb0e;
+}

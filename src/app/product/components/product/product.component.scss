@@ -1,0 +1,38 @@
+.example-card {
+  max-width: 280px;
+}
+
+mat-accordion{
+  padding: 5px;
+}
+mat-accordion{
+  width: 50%;
+}
+
+.mat-form-field-wrapper{
+  width: 50%;
+}
+
+.blue-snackbar {
+  background: #2196F3;
+}
+
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.crop-image{
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+

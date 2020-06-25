@@ -1,0 +1,64 @@
+<div class="">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-form-field>
+        <mat-label>Talla</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Color</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-header>
+    <div class="crop-image">
+      <img mat-card-image src="{{ product.foto_portada }}" alt="Photo of a Shiba Inu">
+    </div>
+    
+    <mat-card-content>
+      <mat-card-title>
+      </mat-card-title>
+      <mat-card-title>{{ product.nombre | uppercase }}</mat-card-title>
+      
+      <mat-card-subtitle>Precio S/52.00</mat-card-subtitle>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/products', product.id]">Ver detalle</button>
+      <button  mat-raised-button color="primary" (click)="openSnackBar('Agregado al carrito', 'cerrado', 'blue-snackbar')"  >Agregar al carrito</button>
+     </mat-card-actions>
+  </mat-card>
+
+  <div *ngFor="let color of colores">
+    <p>{{ color.nomcolor | uppercase }}</p>
+    
+  </div>
+
+  <!-- <mat-card>
+    <mat-card-header>
+      <mat-card-title>perro uno</mat-card-title>
+      <mat-card-subtitle>455</mat-card-subtitle>
+    </mat-card-header>
+     <div class="crop-image">
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+     </div>
+    <mat-card-content>
+     <p>
+      JLKSDJFLSD SLDFJSDLJFLSKD JSFLSJDFLJSDL SDJFLJSDLFJSDLJSDFJSDLJFLSDLSDJFLSJDLFJSDLFSDLKJSFLSD  SDLFJSD SDJFLSDJFSLD FSDLFJSDL
+     </p>
+    </mat-card-content>
+    <mat-card-actions>
+     <button mat-raised-button olor="primary">Ver detalle</button>
+     <button  mat-raised-button color="primary">Agregar al carrito</button>
+    </mat-card-actions>
+   </mat-card> -->
+   
+ 
+</div>
