@@ -20,7 +20,13 @@
           >Products</a
         >
         <a mat-button routerLink="/contact" routerLinkActive="active">Contac</a>
-        <a mat-raised-button matBadgeColor="accent" (click)="openDialog()">
+        <a
+          mat-raised-button
+          matBadgeColor="accent"
+          (click)="openDialog()"
+          [matBadge]="total$ | async"
+          matBadgeColor="warn"
+        >
           <mat-icon>shopping_cart</mat-icon>
           Carrito
         </a>
