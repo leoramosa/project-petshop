@@ -1,3 +1,4 @@
+import { HomeModule } from "./home/home.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -22,6 +23,7 @@ import { CoreModule } from "./core/core.module";
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
+    HomeModule,
   ],
   exports: [ReactiveFormsModule, FormsModule],
   providers: [],

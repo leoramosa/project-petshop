@@ -1,22 +1,22 @@
 <div class="swiper-container one">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor= "let img of images">
-      <a href="">
+    <div class="swiper-slide" *ngFor="let product of products">
+      <a routerLink="/products">
         <div class="title-banner">
-          <p class="title-big-banner">Casaca Newyell</p>
+          <p class="title-big-banner">{{ product.nombre }}</p>
           <p class="banner-description">Lo nuevo de temporada invierno</p>
           <div class="btn-adqui">
-           COMPRAR AHORA
+            COMPRAR AHORA
           </div>
         </div>
-         <img [src]= "img" alt="imagen de banner">
-        </a> 
-      </div>
-      <!-- Add Pagination -->
+        <img src="{{ product.fotoportada }}" alt="imagen dedfsgsd banner" />
+      </a>
+    </div>
+
+    <!-- Add Pagination -->
   </div>
   <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
-
