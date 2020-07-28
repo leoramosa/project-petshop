@@ -1,22 +1,40 @@
-<div class="swiper-container one">
+<!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let product of products">
-      <a routerLink="/products">
-        <div class="title-banner">
-          <p class="title-big-banner">{{ product.nombre }}</p>
-          <p class="banner-description">Lo nuevo de temporada invierno</p>
-          <div class="btn-adqui">
-            COMPRAR AHORA
-          </div>
-        </div>
-        <img src="{{ product.fotoportada }}" alt="imagen dedfsgsd banner" />
-      </a>
+    <!-- Slides -->
+    <div *ngFor="let product of products" class="swiper-slide">
+      <img [src]="product.fotoportada" alt="" />
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+<div class="container">
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide" *ngFor="let product of products">
+          {{ product.nombre }}
+          <img src="../../../../assets/img/banner-1.jpg" alt="" />
+        </li>
+      </ul>
     </div>
 
-    <!-- Add Pagination -->
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        prev
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        next
+      </button>
+    </div>
   </div>
-  <div class="swiper-pagination"></div>
-  <!-- Add Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
 </div>

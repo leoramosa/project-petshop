@@ -24,3 +24,15 @@
   padding: 10px;
   cursor: pointer;
 }
+
+.swiper-container {
+  width: 1140px;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
