@@ -14,8 +14,8 @@ import { CoreModule } from "./core/core.module";
 import { NgxUsefulSwiperModule } from "ngx-useful-swiper";
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent],
   imports: [
+    NgxUsefulSwiperModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,
@@ -25,8 +25,9 @@ import { NgxUsefulSwiperModule } from "ngx-useful-swiper";
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxUsefulSwiperModule,
+    ,
   ],
+  declarations: [AppComponent, LayoutComponent],
   exports: [ReactiveFormsModule, FormsModule, NgxUsefulSwiperModule],
   providers: [],
   bootstrap: [AppComponent],
