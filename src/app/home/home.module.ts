@@ -11,5 +11,6 @@ import { BannerProductsComponent } from "./components/banner-products/banner-pro
 @NgModule({
   declarations: [BannerComponent, HomeComponent, BannerProductsComponent],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
+  exports: [],
 })
 export class HomeModule {}

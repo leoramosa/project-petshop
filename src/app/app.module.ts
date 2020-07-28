@@ -12,10 +12,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { CoreModule } from "./core/core.module";
 import { NgxUsefulSwiperModule } from "ngx-useful-swiper";
-
 @NgModule({
   imports: [
-    NgxUsefulSwiperModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,
@@ -25,10 +23,10 @@ import { NgxUsefulSwiperModule } from "ngx-useful-swiper";
     HttpClientModule,
     CoreModule,
     HomeModule,
-    ,
+    NgxUsefulSwiperModule,
   ],
   declarations: [AppComponent, LayoutComponent],
-  exports: [ReactiveFormsModule, FormsModule, NgxUsefulSwiperModule],
+  exports: [ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
