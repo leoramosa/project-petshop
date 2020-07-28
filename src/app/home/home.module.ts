@@ -7,6 +7,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { HomeRoutingModule } from "./home-routing.module";
 import { SharedModule } from "./../shared/shared.module";
 import { BannerProductsComponent } from "./components/banner-products/banner-products.component";
+
 @NgModule({
   declarations: [BannerComponent, HomeComponent, BannerProductsComponent],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
