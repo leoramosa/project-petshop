@@ -1,19 +1,22 @@
 <!-- Slider main container -->
-<div class="swiper-container">
+
+<swiper class="swiper-container">
   <!-- Additional required wrapper -->
+
   <div class="swiper-wrapper">
     <!-- Slides -->
     <div *ngFor="let product of products" class="swiper-slide">
+      <p>{{ product.nombre }}</p>
       <img [src]="product.fotoportada" alt="" />
     </div>
   </div>
   <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
 
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
-</div>
+</swiper>
