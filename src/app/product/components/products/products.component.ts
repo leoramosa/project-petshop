@@ -1,48 +1,62 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Product } from './../../../core/models/product.model';
-import { Categoria } from './../../../core/models/categoria.model';
-import { ProductsService } from './../../../core/services/products/products.service';
-import { CategoriaService } from './../../../core/services/categoria/categoria.service';
+import { Component, OnInit, AfterViewInit } from "@angular/core";
+import Swiper from "swiper";
+import { Product } from "./../../../core/models/product.model";
+import { Categoria } from "./../../../core/models/categoria.model";
+import { ProductsService } from "./../../../core/services/products/products.service";
+import { CategoriaService } from "./../../../core/services/categoria/categoria.service";
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  selector: "app-products",
+  templateUrl: "./products.component.html",
+  styleUrls: ["./products.component.scss"],
 })
-export class ProductsComponent implements OnInit {
-
+export class ProductsComponent implements OnInit, AfterViewInit {
+  mySwiper: Swiper;
   products: Product[] = [];
   categorias: Categoria[] = [];
 
   constructor(
     private productService: ProductsService,
     private categoriaService: CategoriaService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.fetchProducts();
     this.fetchCategorias();
   }
 
-
   clickProduct(id: number) {
-    console.log('product');
+    console.log("product");
     console.log(id);
   }
 
   fetchProducts() {
-    this.productService.getAllProducts()
-    .subscribe(products => {
+    this.productService.getAllProducts().subscribe((products) => {
       this.products = products;
     });
   }
 
   fetchCategorias() {
-    this.categoriaService.getAllProducts()
-    .subscribe(categorias => {
+    this.categoriaService.getAllProducts().subscribe((categorias) => {
       this.categorias = categorias;
     });
   }
 
+  ngAfterViewInit() {
+    this.mySwiper = new Swiper(".swiper-container", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      direction: "horizontal",
+    });
+  }
 }

@@ -1,17 +1,30 @@
-
 <div class="product-grid">
-    <app-product
-      *ngFor="let product of products"
-      (productClicked)="clickProduct($event)"
-      [product]="product">
-    </app-product>
+  <app-product
+    *ngFor="let product of products"
+    (productClicked)="clickProduct($event)"
+    [product]="product"
+  >
+  </app-product>
 
-    
-    <div *ngFor="let categoria of categorias">
-      <p>{{ categoria.nombrecategoria | uppercase }}</p>
-      
-    </div>
-    
+  <div *ngFor="let categoria of categorias">
+    <p>{{ categoria.nombrecategoria | uppercase }}</p>
+  </div>
 </div>
 
-  
+<!-- Slider main container -->
+
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div *ngFor="let product of products" class="swiper-slide">
+      <img [src]="product.image" alt="" />
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
