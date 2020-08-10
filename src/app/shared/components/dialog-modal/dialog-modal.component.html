@@ -1,24 +1,30 @@
 <div *ngIf="products$ | async as products">
-  <div *ngIf="products.length === 0">
-    <div class="modal_car">
-      <div class="modal_car-description">
-        <p>producto vacio</p>
+  <p *ngIf="products.length === 0">no hay productos</p>
+  <div class="row" *ngFor="let product of products">
+    <div class="col-xs-12 col-sm-2 col-md-2">
+      <div class="box">
+        <img class="image" [src]="product.title" alt="" />
       </div>
-      <div class="modal_car-button">
-        <button>
-          cerrar
-        </button>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2">
+      <div class="box">
+        {{ product.title }}
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2">
+      <div class="box">
+        {{ product.price }}
       </div>
     </div>
   </div>
+</div>
 
-  <!-- <a routerLink="/order" mat-raised-button mat-mat-dialog-close="false">
+<!-- <a routerLink="/order" mat-raised-button mat-mat-dialog-close="false">
   <mat-icon>shopping_cart</mat-icon>
   pagar
 </a> -->
-  <!-- <mat-dialog-actions>
-    <button routerLink="/order" mat-button mat-raised-button mat-dialog-close>
-      cerrar
-    </button>
-  </mat-dialog-actions> -->
-</div>
+<mat-dialog-actions>
+  <button routerLink="/order" mat-button mat-raised-button mat-dialog-close>
+    cerrar
+  </button>
+</mat-dialog-actions>
