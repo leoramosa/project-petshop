@@ -1,6 +1,4 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { ProductsService } from "../../../core/services/products/products.service";
-import { Product } from "../../../core/models/product.model";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-banner",
@@ -8,24 +6,14 @@ import { Product } from "../../../core/models/product.model";
   styleUrls: ["./banner.component.scss"],
 })
 export class BannerComponent implements OnInit {
+  // por mientras
   images: string[] = [
     "assets/img/banner-1.jpg",
     "assets/img/banner-2.jpg",
     "assets/img/banner-3.jpg",
   ];
-  products: Product[] = [];
 
-  // por mientras
+  constructor() {}
 
-  constructor(private productService: ProductsService) {}
-
-  fetchProducts() {
-    this.productService.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
-  }
-
-  ngOnInit() {
-    this.fetchProducts();
-  }
+  ngOnInit(): void {}
 }

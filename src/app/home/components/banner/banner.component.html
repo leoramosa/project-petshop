@@ -1,17 +1,21 @@
-<!-- Slider main container -->
-
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-
+<div class="swiper-container one">
   <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div *ngFor="let product of products" class="swiper-slide">
-      <img [src]="product.image" alt="" />
+    <div class="swiper-slide" *ngFor="let img of images">
+      <a href="">
+        <div class="title-banner">
+          <p class="title-big-banner">Casaca Newyell</p>
+          <p class="banner-description">Lo nuevo de temporada invierno</p>
+          <div class="btn-adqui">
+            COMPRAR AHORA
+          </div>
+        </div>
+        <img [src]="img" alt="imagen de banner" />
+      </a>
     </div>
+    <!-- Add Pagination -->
   </div>
-  <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
+  <!-- Add Arrows -->
   <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>

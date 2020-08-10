@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
-import Swiper from "swiper";
+import { Component, OnInit } from "@angular/core";
+
 import { Product } from "./../../../core/models/product.model";
 import { Categoria } from "./../../../core/models/categoria.model";
 import { ProductsService } from "./../../../core/services/products/products.service";
@@ -10,8 +10,7 @@ import { CategoriaService } from "./../../../core/services/categoria/categoria.s
   templateUrl: "./products.component.html",
   styleUrls: ["./products.component.scss"],
 })
-export class ProductsComponent implements OnInit, AfterViewInit {
-  mySwiper: Swiper;
+export class ProductsComponent implements OnInit {
   products: Product[] = [];
   categorias: Categoria[] = [];
 
@@ -39,24 +38,6 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   fetchCategorias() {
     this.categoriaService.getAllProducts().subscribe((categorias) => {
       this.categorias = categorias;
-    });
-  }
-
-  ngAfterViewInit() {
-    this.mySwiper = new Swiper(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      direction: "horizontal",
     });
   }
 }
